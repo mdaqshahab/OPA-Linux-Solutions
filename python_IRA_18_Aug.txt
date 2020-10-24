@@ -1,0 +1,180 @@
+PYTHON****
+
+
+
+Create a class Employee with the below attributes:
+employeeId - int
+employeeName - String
+department - String
+salary - Number
+role - String
+
+Where , employeeId represents the id of the employee,
+	employeeName represents the name of the employee
+	department represents name of the department employee works for
+	salary represents the salary of the employee
+	role represents role of employee
+
+Define _init_ method to initialize the 5 attributes in the above sequence.
+
+Create a class Organization with the below attributes:
+roleIncentivePercentage - A dictionary having roleName and incentive percentage as key:value pairs(roleName:incentivePercentage)
+employeeList - list of Employee type objects
+
+Where , roleIncentivePercentage represents a dictionary having roleName:incentive percentage as key:value pairs
+	employeeList is a list of Employee objects
+
+Define two methods fetchIncentivePercentage  and calculateEmployeeSalaryByDepartment in the class to fulfill the requirements specified below.
+
+fetchIncentivePercentage method:
+
+This method will take as input an Employee object and returns the incentive percentage for the employee based on role of the employee.
+The incentive percentage is available for each role in the rolesIncentivePercentage dictionary available in the Organisation class.
+Method will return the incentive percentage for the role of the employee object passed as an argument.
+If the role of the employee is not found in the roleIncentivePercentage dictionary, method should return None.
+
+calculateEmployeeSalaryByDepartment method:
+
+This method will take as input a string parameter departmentname and return a list of employees for the given department after updating the salary
+(by incrementing the salary with the incentive amount).
+The method will calculate the incentive for each employee in the employeeList of the Organization for the given department and update the salary by 
+incrementing the salary with the calculated incentive amount.
+
+Incentive amount = salary * incentive percentage value / 100
+
+The incentive percentage value can be fetched using the fetchIncentivePercentage method defined in the class for the respective employee object using the role
+
+If no employee for the given department is present in the employeeList, then the method should return None
+
+NOTE: ALL SEARCHES SHOULD BE CASE SENSITIVE
+
+
+Instruction to write main section of the code:
+
+a. You would require to write the main section completely, hence please follow the below instructions for the same.
+b. You would require to write the main program which is inline to the "sample input description section mentioned below and to read the data in the same sequence.
+c. Create respective objects(Employee and Organizaton) with the given seqjence of arguments to fulfill the _init_ method requirement defined in the respective classes referring
+to the below instructions.
+
+	i. Create a dictionary for the Organization class's attribute roleIncentivePercentage.
+
+	TO create the dictionary,
+		1. first read the number of roles you want to store in the dictionary
+		2. read the values for the role name and incentive percentage for the number of roles you want to have in the dictionary
+		(consider the input taken in point 1 above)
+
+	ii. Create an Employee object after reading the data related to it and add the object to a list of Employee objects which will be provided to the Organization object
+	for the employeeList attribute. This point repeats for the number of Employee objects( considered in the first line of input, after reading the data for
+	roleIncentivePercentage dictionary)
+
+	iii. Create Organization object by passing  the roleIncentivePercentage dictionary and employee List(created and as mentioned in the above oint 
+	#c.i & c.ii) as the arguments.
+	
+	d. Call the method
+fetchIncentivePercentage by passing the first Employee object from the employee list created in the point c.ii above and print the value returned.
+If the value returned is None, display the message "Employee Not Found"(excluding the quotes)
+
+e. Take a department name (strnig) value as input depicting the deoartment to be provided as arguments to the method calculateEmployeeSalaryByDepartment 
+
+f. Call the method calculateEmployeeSalaryByDepartment  mentioned above from the main section and display the employee id, employee name, salary from the list returned by the method. 
+You may refer to the Sample output for the display format
+
+g. If None is returned by calculateEmployeeSalaryByDepartment , then display the message "Employees Not Found"(excluding quotes)
+
+You can use/refer the blow given sample input and output to verify your solution using "Test against Custom Input" option
+
+
+SAMPLE INPUT(below) description
+1. The first input taken in the main section is the number of elements (roleName:incentivePercentage pair) to be added to the dictionary (roleIncentivePercentage) of the Organization class
+
+2. The next set of inputs are the role name and incentive percentage for each roleName:incentivePercentage pair one after another and is repeated for the number of dictionary elements given
+ in the first line of input.
+
+3. Next input is count of Employees objects to be created and added to the employee list which is another attribute of the Organzation class
+
+4. The next set of inputs are the employeeId, empName, department, salary and role of the Employee for each Employee object taken one after another and is repeated for the number of Employee
+objects given in the point #3
+
+5. The last line of input refers the department, to be passed as an integer to the function calculateEmployeeSalaryByDepartment   when called in main
+
+SAMPLE ONE : INPUT/OUTPUT
+
+INPUT:
+3
+driver
+20
+Faculty
+50
+Manager
+30
+4
+101
+Papori
+TD
+20000
+manager
+102
+Vikash
+TD
+10000
+driver
+103
+diganta
+IS
+20000
+Housekeeping
+104
+Sinu
+HR
+30000
+faculty
+TD
+
+OUTPUT:
+30
+101 Papori 26000.0
+102 Vikash 12000.0
+
+OUTPUT EXPLANATION:
+
+First Line indicates the incetive percentage for the first employee object created in the main function,based on the role of the respective employee.
+Second and Third line of outputs indicates the 
+EmpId,Name and updated salaries of the employees who belongs to TD deprtment
+
+
+SAMPLE TWO : INPUT/OUTPUT
+
+INPUT:
+3
+driver
+20
+Faculty
+50
+Manager
+30
+4
+101
+Papori
+TD
+2000000
+CEO
+102
+Vikash
+TD
+10000
+driver
+103
+diganta
+IS
+20000
+Housekeeping
+104
+Sinu
+HR
+30000
+faculty
+IS
+
+OUTPUT:
+Employee Not Found
+Employee Not Found

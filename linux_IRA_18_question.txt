@@ -1,0 +1,56 @@
+QUESTION
+
+You have a file having address of your customers with name,house number and street and the contact number. 
+For each record the fields are in a new line and between two records , there is a blank (empty ) line. 
+That means, for the file the field separator is a new line and the record separator is an empty line.
+Following is a sample data
+
+SAMPLE DATA
+Rajesh Kumar
+123, High Street
+(222) 4661234
+
+Julee THomas
+487, High Street
+(523) 6438754
+
+Vivek Oberoi
+678, New Street
+(999) 567345
+
+
+Write the Unix command to print the address of customers in a tabular form
+having each recoed in a single line field being separetd by a tab.
+For Example, for the data given above, the output should be as below
+OUTPUT
+Name	House No	Phone
+Rajesh Kumar	123, High Street	(222) 4661234
+Julee THomas	487, High Street	(523) 6438754
+Vivek Oberoi	678, New Street		(999) 567345
+
+The file name will be provided as command line argument when the script containing your command will run.
+
+You can use shell variables (e.g $0,$1,$2) whichever is aplicable for your requirement to provide the command line argument.
+
+For more clarity,please refer to the sample input and output below.
+
+SAMPLE INPUT1
+Rajesh Kumar
+123, High Street
+(222) 4661234
+
+Julee THomas
+487, High Street
+(523) 6438754
+
+Vivek Oberoi
+678, New Street
+(999) 567345
+
+SAMPLE OUTPUT1
+Name		House No		Phone
+Rajesh Kumar	123, High Street	(222) 4661234
+Julee THomas	487, High Street	(523) 6438754
+Vivek Oberoi	678, New Street		(999) 567345
+
+Note: IN the output, the fields in column heading should be separated by two tabs and fields for each record should be separated by one tab.
